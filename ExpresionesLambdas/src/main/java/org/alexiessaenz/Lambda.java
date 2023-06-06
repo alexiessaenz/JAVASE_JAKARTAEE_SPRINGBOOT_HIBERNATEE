@@ -43,4 +43,12 @@ public class Lambda {
         };
         System.out.println(proveedor.get());
     }
+
+
+    public static SimpleDateFormat consumer(Date d){
+        Consumer<Date> consumer;
+            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM.dd");
+            System.out.println(f.format(d));
+        return f;
+    }
 }
