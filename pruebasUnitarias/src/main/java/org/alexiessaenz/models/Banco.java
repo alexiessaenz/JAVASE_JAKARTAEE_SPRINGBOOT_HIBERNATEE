@@ -1,12 +1,17 @@
 package org.alexiessaenz.models;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Banco {
     private List<Cuenta> cuentas;
     private String nombre;
 
 
+    public Banco() {
+        cuentas=new ArrayList<>();
+    }
 }
 
 public void addCuenta (Cuenta cuenta){
