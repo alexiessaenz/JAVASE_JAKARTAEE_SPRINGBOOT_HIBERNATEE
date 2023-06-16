@@ -1,7 +1,7 @@
-package org.tbsJunit.jpaHib;
+package org.tbsJunit.jpaHib.util;
 
 import jakarta.persistence.EntityManager;
-import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.entities.Cliente;
 import org.tbsJunit.jpaHib.util.JpaUtil;
 
 import javax.swing.*;

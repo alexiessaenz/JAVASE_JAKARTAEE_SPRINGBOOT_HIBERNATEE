@@ -1,4 +1,4 @@
-package org.tbsJunit.jpaHib.entity;
+package org.tbsJunit.jpaHib.entities;
 
 import jakarta.persistence.*;
 

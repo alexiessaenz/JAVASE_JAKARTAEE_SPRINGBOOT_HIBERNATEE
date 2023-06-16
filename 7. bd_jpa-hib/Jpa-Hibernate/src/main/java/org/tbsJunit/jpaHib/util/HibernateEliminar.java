@@ -1,8 +1,7 @@
 package org.tbsJunit.jpaHib.util;
 
 import jakarta.persistence.EntityManager;
-import org.hibernate.engine.spi.SessionDelegatorBaseImpl;
-import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.entities.Cliente;
 
 import java.util.Scanner;
 

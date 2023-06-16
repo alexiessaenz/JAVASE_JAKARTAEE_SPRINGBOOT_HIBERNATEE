@@ -2,7 +2,7 @@ package org.tbsJunit.jpaHib;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.entities.Cliente;
 import org.tbsJunit.jpaHib.util.JpaUtil;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.tbsJunit.jpaHib.services;
 
-import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.entities.Cliente;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package org.tbsJunit.jpaHib.repositories;
 
 import jakarta.persistence.EntityManager;
-import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.entities.Cliente;
 
 import java.util.List;
 
