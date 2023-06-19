@@ -1,14 +1,16 @@
-package org.tbsJunit.jpaHib.util;
+package org.tbsJunit.jpaHib;
 
 import jakarta.persistence.EntityManager;
-import org.tbsJunit.jpaHib.entities.Cliente;
+import org.tbsJunit.jpaHib.entity.Cliente;
+import org.tbsJunit.jpaHib.util.JpaUtil;
 
 import javax.swing.*;
 
-        public class HibernateCrear {
+public class HibernateCrear {
     public static void main(String[] args) {
+
         EntityManager em = JpaUtil.getEntityManager();
-        try {
+        try{
             String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
             String apellido = JOptionPane.showInputDialog("Ingrese el apellido: ");
             String pago = JOptionPane.showInputDialog("Ingrese la forma de pago: ");
@@ -19,17 +21,17 @@ import javax.swing.*;
             c.setNombre(nombre);
             c.setApellido(apellido);
             c.setFormapago(pago);
-
             em.persist(c);
             em.getTransaction().commit();
 
-            System.out.println("el id del cliente registrado es " + c.getId());
+            System.out.println("el id del cliente registrado es ; " + c.getId());
             c = em.find(Cliente.class, c.getId());
             System.out.println(c);
-        } catch (Exception e) {
+
+        } catch (Exception e){
             em.getTransaction().rollback();
             e.printStackTrace();
-        }finally {
+        } finally {
             em.close();
         }
     }
