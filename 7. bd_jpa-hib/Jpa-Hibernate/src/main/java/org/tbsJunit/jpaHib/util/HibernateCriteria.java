@@ -119,7 +119,9 @@ public class HibernateCriteria {
         queryString = criteria.createQuery(String.class);
         from = queryString.from(Cliente.class);
 
-        queryString.select(criteria.upper(criteria.concat(criteria.concat(from.get("nombre")," "), from.get("apellido"))));
+        queryString.select(criteria.upper(
+                criteria.concat(criteria.concat(
+                        from.get("nombre")," "), from.get("apellido"))));
         nombres = em.createQuery(queryString).getResultList();
         nombres.forEach(System.out::println);
 

@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        Main m = new Main();
         Empleado empleado = new Empleado();
         List<Empleado> empleados;
         long id;
@@ -29,16 +30,7 @@ public class Main {
         }
 
 
-        System.out.println("\n\n========= por id =========");
-        System.out.println("ingrese el id del empleado a buscar: ");
-        id = s.nextLong();
-        empleado = emp.porId(id);
-        if (empleado!=null){
-            System.out.println("Empleado encontrado: ");
-            System.out.println(empleado);
-        } else {
-            System.out.println("Error: Empleado no encontrado");
-        }
+        m.porId();
 
 
         System.out.println("\n\n========= editar =========");
@@ -102,4 +94,16 @@ public class Main {
         emp.editar(empleado);
     }
 
+    public void porId(){
+        System.out.println("\n\n========= por id =========");
+        System.out.println("ingrese el id del empleado a buscar: ");
+        Long id = s.nextLong();
+        Empleado empleado = emp.porId(id);
+        if (empleado!=null){
+            System.out.println("Empleado encontrado: ");
+            System.out.println(empleado);
+        } else {
+            System.out.println("Error: Empleado no encontrado");
+        }
+    }
 }
