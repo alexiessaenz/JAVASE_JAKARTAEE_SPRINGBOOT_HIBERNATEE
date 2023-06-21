@@ -1,9 +1,7 @@
-package org.tbsJunit.jpaHib.entities;
+package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,6 +24,7 @@ public class Cliente {
 //    private LocalDateTime editadoEn;
     @Embedded
     private Auditoria audit = new Auditoria();
+
 
 
 //    @PrePersist
