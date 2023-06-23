@@ -25,6 +25,7 @@ public class Main {
             Factura f = new Factura();
             f.setDescripcion("compras oficina");
             f.setTotal(1000L);
+            f.setCliente(c);
             em.persist(f);
 
             em.getTransaction().commit();

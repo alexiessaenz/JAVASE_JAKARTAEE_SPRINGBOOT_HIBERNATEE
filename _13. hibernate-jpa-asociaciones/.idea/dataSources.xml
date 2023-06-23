@@ -6,6 +6,9 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://140.84.178.214:3306/jpahibernatecurso</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="EXTERNAL_DATA_PATH" value="C:\Users\Database_fundamental\IdeaProjects\Nueva carpeta\CRUD\_13. hibernate-jpa-asociaciones\src\main\resources\external-data.xml" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

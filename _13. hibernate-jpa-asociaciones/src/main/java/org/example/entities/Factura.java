@@ -3,11 +3,13 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Objects;
+
+@EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-@ToString
+@Data
+@Builder
 @Entity
 @Table(name="facturas")
 public class Factura {
@@ -16,9 +18,9 @@ public class Factura {
     private Long id;
     private String descripcion;
     private Long total;
-//    @ManyToOne
-//    @JoinColumn(name="id_cliente")
-//    private Cliente cliente;
+    @ManyToOne
+    @JoinColumn(name="id_cliente")
+    private Cliente cliente;
 }
 
 /*

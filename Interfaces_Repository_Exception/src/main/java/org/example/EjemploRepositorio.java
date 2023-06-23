@@ -1,4 +1,4 @@
-package org.example.;
+package org.example;
 
 import org.example.modelo.Cliente;
 import org.example.repositorio.*;

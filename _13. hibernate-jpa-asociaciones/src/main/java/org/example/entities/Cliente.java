@@ -2,12 +2,13 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-@ToString
+@Data
+@Builder
 @Entity
 @Table(name = "clientes")
 public class Cliente {
@@ -25,6 +26,18 @@ public class Cliente {
     @Embedded
     private Auditoria audit = new Auditoria();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "id_cliente")
+    @JoinTable(name="tbl_clientes_direcciones",joinColumns = @JoinColumn(name = "id_cliente")
+    ,inverseJoinColumns = @JoinColumn(name = "id_cliente")
+    ,uniqueConstraints = @UniqueConstraint(columnNames = {"id_direccion"}))
+    private List<Direccion> direcciones = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "cliente")
+    private List<Factura> facturas = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "cliente")
+    private ClienteDetalle clienteDetalle;
 
 
 //    @PrePersist
@@ -50,6 +63,24 @@ public class Cliente {
 //                ", editadoEn='" + audit.getEditadoEn() + '\'' +
 //                '}';
 //    }
+    public Cliente addFactura(Factura f){
+        this.facturas.add(f);
+        f.setCliente(this);
+        return this;
+    }
 
+    public  void removeFactura(Factura f){
+        this.facturas.remove(f);
+        f.setCliente(null);
+    }
 
+    public void addDetalle(ClienteDetalle cd){
+        this.clienteDetalle = cd;
+        clienteDetalle.setCliente(this);
+    }
+
+    public void removeDetalle(){
+        clienteDetalle.setCliente(null)
+        this.clienteDetalle=null;
+    }
 }
