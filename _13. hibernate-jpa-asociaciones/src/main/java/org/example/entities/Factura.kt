@@ -6,7 +6,7 @@ import lombok.*
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+//@Data
 @Builder
 @Entity
 @Table(name="facturas")
