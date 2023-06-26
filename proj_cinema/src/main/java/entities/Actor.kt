@@ -2,6 +2,7 @@ package entities
 
 class Actor {
     var name: String=""
+    var lastname: String=""
     fun hello() {
         var str2 = "Geeks"
         for(i in str2.indices){
