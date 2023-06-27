@@ -20,6 +20,6 @@ public class ClienteDetalle {
     @Column(name="puntos_acumulados")
     private long puntosAcumulados;
     @OneToOne
-    @JoinColumn(name="cliente_detalle_id")
+    @JoinColumn(name="cliente_id_fk")
     private Cliente cliente;
 }

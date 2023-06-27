@@ -29,7 +29,7 @@ public class Cliente {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 //    @JoinColumn(name = "id_cliente")
     @JoinTable(name="tbl_clientes_direcciones",joinColumns = @JoinColumn(name = "id_cliente")
-    ,inverseJoinColumns = @JoinColumn(name = "id_cliente")
+    ,inverseJoinColumns = @JoinColumn(name = "id_direccion")
     ,uniqueConstraints = @UniqueConstraint(columnNames = {"id_direccion"}))
     private List<Direccion> direcciones = new ArrayList<>();
 
@@ -80,7 +80,7 @@ public class Cliente {
     }
 
     public void removeDetalle(){
-        clienteDetalle.setCliente(null)
+        clienteDetalle.setCliente(null);
         this.clienteDetalle=null;
     }
 }

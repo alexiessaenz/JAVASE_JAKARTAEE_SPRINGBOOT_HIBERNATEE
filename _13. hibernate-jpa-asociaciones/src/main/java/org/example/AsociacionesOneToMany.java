@@ -16,7 +16,6 @@ public class AsociacionesOneToMany {
             cliente.setApellido("Edu");
             cliente.setFormapago("Mercado pago");
 
-
             Direccion dir1 =
             Direccion.builder()
                     .calle("El Verge")

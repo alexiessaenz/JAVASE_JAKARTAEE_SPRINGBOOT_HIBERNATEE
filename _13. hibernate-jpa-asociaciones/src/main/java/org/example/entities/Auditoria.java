@@ -1,13 +1,11 @@
 package org.example.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-@Table(name = "auditorias")
+//@Table(name = "auditorias")
+@Embeddable
 public class Auditoria {
     @Column(name="creado_en")
     private LocalDateTime creadoEn;

@@ -2,12 +2,11 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 import org.example.entities.Cliente;
+import org.example.entities.ClienteDetalle;
 import org.example.entities.Factura;
 import org.example.util.JpaUtil;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class OneToOneBidireccional {
     public static void main(String[] args) {
 
         System.out.println("\n\n\n------------------ | ----------------");
@@ -20,17 +19,15 @@ public class Main {
             c.setNombre("Cata");
             c.setApellido("Edu");
             c.setFormapago("credito");
+
+
+            ClienteDetalle cd = new ClienteDetalle();
+            cd.setPrime(true);
+            cd.setPuntosAcumulados(8000L);
+            c.addDetalle(cd);
             em.persist(c);
-
-            Factura f = new Factura();
-            f.setDescripcion("compras oficina");
-            f.setTotal(1000L);
-            f.setCliente(c);
-//            c.addFactura(f);
-            em.persist(f);
-
             em.getTransaction().commit();
-            System.out.println(f);
+            System.out.println(c);
         }catch(Exception e){
             em.getTransaction().rollback();
             e.printStackTrace();
@@ -38,9 +35,5 @@ public class Main {
         }finally{
             em.close();
         }
-
     }
-
-
-
 }

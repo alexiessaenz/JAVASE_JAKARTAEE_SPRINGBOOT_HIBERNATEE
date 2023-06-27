@@ -27,7 +27,8 @@ public class AsociacionOneToOne {
                     .puntosAcumulados(4321L)
                     .build();
             em.persist(cd);
-            cliente.setDetalle(detalle);
+//            cliente.setDetalle(detalle);
+            cliente.addDetalle(cd);
 
             em.getTransaction().commit();
             System.out.println(cliente);
