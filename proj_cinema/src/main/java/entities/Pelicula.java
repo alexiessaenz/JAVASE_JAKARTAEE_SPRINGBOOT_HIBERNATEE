@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "actor")
+@Table(name = "pelicula")
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CodActor")
+    @Column(name = "CodPelicula")
     Long codPelicula;
     @Column(name = "Titulo")
     String titulo;
@@ -43,7 +43,7 @@ public class Pelicula {
     private List<Actor> actores = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name="participa"
+    @JoinTable(name="ganaPremio"
             ,joinColumns = @JoinColumn(name = "CodPelicula")
             ,inverseJoinColumns = @JoinColumn(name = "CodPremio")
             ,uniqueConstraints = @UniqueConstraint(
