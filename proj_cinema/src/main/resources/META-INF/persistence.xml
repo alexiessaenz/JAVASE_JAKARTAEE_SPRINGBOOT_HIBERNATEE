@@ -5,6 +5,8 @@
     <persistence-unit name="cine" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>entities.Actor</class>
+        <class>entities.Pelicula</class>
+        <class>entities.Director</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
        <properties>
            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://140.84.178.214:3306/cine?serverTimezone=America/El_Salvador"/>
