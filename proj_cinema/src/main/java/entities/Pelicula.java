@@ -42,6 +42,15 @@ public class Pelicula {
     ))
     private List<Actor> actores = new ArrayList<>();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name="participa"
+            ,joinColumns = @JoinColumn(name = "CodPelicula")
+            ,inverseJoinColumns = @JoinColumn(name = "CodPremio")
+            ,uniqueConstraints = @UniqueConstraint(
+            columnNames = {"CodPremio"}
+    ))
+    private List<Premio> premios = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name="CodDirector")
     Director director = new Director();
