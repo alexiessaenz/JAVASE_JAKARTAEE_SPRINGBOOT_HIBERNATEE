@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="207c6040-63f9-42c2-bfd7-090e444f8488" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/src/main/java/org/tbsJunit/jpaHib/util/HibernateCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/src/main/java/org/tbsJunit/jpaHib/util/HibernateCriteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/7. bd_jpa-hib/Jpa-Hibernate/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRUD/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CRUD/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CRUD/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRUD/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CRUD/pom.xml" afterDir="false" />
@@ -29,7 +25,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Database_fundamental/IdeaProjects/Nueva carpeta/CRUD/hibernate-exam",
+    "last_opened_file_path": "C:/Users/Database_fundamental/IdeaProjects/Nueva carpeta/CRUD/_13. hibernate-jpa-asociaciones",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,6 +39,7 @@
       <updated>1687194635465</updated>
       <workItem from="1687194636472" duration="16000" />
       <workItem from="1687276058339" duration="18000" />
+      <workItem from="1687876778509" duration="11000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@ package entities
 
 import java.time.LocalDateTime
 
-class Actor {
+class Actor1 {
     var name: String=""
 <<<<<<< HEAD
     var lastname: String=""
