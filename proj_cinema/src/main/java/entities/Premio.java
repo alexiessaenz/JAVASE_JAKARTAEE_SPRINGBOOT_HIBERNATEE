@@ -11,6 +11,10 @@ public class Premio {
     Long codPremio;
     String premio;
 
+    @ManyToOne
+    @JoinColumn(name="Anyo")
+    Pelicula pelicula = new Pelicula();
+
     public Premio() {
     }
 
