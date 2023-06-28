@@ -8,6 +8,7 @@
         <class>entities.Pelicula</class>
         <class>entities.Director</class>
         <class>entities.Premio</class>
+        <class>entities.GanaPremio</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
        <properties>
            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://140.84.178.214:3306/cine1?serverTimezone=America/El_Salvador"/>

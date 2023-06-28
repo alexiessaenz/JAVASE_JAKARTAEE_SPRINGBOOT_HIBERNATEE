@@ -3,8 +3,10 @@ package entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+import java.io.Serializable;
+
 @Embeddable
-public class GanaPremioKey {
+public class GanaPremioKey implements Serializable {
     @Column(name = "CodPelicula")
     Long codPelicula;
 

@@ -1,7 +1,8 @@
 package entities;
 
 import jakarta.persistence.*;
-
+@Entity
+@Table(name = "ganaPremio")
 public class GanaPremio {
 
     @EmbeddedId
