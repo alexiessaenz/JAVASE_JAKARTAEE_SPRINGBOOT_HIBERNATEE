@@ -2,12 +2,7 @@ package org.example.entities
 
 import jakarta.persistence.*
 import lombok.*
-
-//@EqualsAndHashCode
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Data
-@Builder
+//@Builder
 @Entity
 @Table(name="facturas")
 data class Factura (

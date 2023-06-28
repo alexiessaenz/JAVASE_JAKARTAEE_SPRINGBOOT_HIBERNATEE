@@ -44,11 +44,12 @@ public class Pelicula {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name="ganaPremio"
-            ,joinColumns = @JoinColumn(name = "CodPelicula")
+            ,joinColumns = {@JoinColumn(name = "CodPelicula")}
             ,inverseJoinColumns = @JoinColumn(name = "CodPremio")
             ,uniqueConstraints = @UniqueConstraint(
             columnNames = {"CodPremio"}
     ))
+    @J
     private List<Premio> premios = new ArrayList<>();
 
     @ManyToOne

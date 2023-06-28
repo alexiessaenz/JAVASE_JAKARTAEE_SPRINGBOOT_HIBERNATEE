@@ -6,15 +6,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-
 @Table(name = "director")
 public class Director {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name = "CodDirector")
     private Integer codDirector;
-    @Column(nullable = false)
-    private String Nombre;
+    @Column(name = "Nombre")
+    private String nombre;
     @Column(name = "FNacimiento")
     LocalDateTime fNacimiento;
     @Column(name = "LNacimiento")
@@ -25,8 +24,8 @@ public class Director {
     LocalDateTime fMuerte;
 
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "pelicula")
-    private List<Pelicula> pelicula;
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "pelicula")
+//    private List<Pelicula> pelicula;
 
 
     public Director() {
@@ -42,11 +41,11 @@ public class Director {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        nombre = nombre;
     }
 
     public LocalDateTime getfNacimiento() {
@@ -85,7 +84,7 @@ public class Director {
     public String toString() {
         return "{" +
                 "codDirector=" + codDirector +
-                ", Nombre='" + Nombre + '\'' +
+                ", Nombre='" + nombre + '\'' +
                 ", fNacimiento=" + fNacimiento +
                 ", lNacimiento='" + lNacimiento + '\'' +
                 ", nacionalidad='" + nacionalidad + '\'' +
