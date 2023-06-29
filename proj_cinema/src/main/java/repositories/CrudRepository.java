@@ -4,7 +4,7 @@ package repositories;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudRepository<T, ID extends Serializable> {
+public interface CrudRepository<T> {
     List<T> listar();
     T porId(Long id);
     void editar(T t) throws Exception;

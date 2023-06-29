@@ -9,10 +9,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception {
         Pelicula p = new Pelicula();
-
-        ServiceImpl ps = new <Pelicula>ServiceImpl();
-        List<Pelicula> listar = ps.listar();
-        listar.forEach(System.out::println);
+          String s =  p.getClass().getName();
+//        ServiceImpl ps = new <Pelicula>ServiceImpl();
+//        List<Pelicula> listar = ps.listar();
+//        listar.forEach(System.out::println);
 
 
     }

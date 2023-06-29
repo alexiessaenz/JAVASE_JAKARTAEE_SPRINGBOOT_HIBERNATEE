@@ -1,48 +1,39 @@
 package repositories;
 
-
+import entities.Pelicula;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 import utils.JpaUtil;
 
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.List;
 
-public class CrudRepositoryImpl<T, ID extends Serializable> implements CrudRepository<T, ID> {
+public class PremioRepository implements CrudRepository<Pelicula>{
     private EntityManager em;
-    private Class<T> type;
+    private Pelicula peli;
 
-    public CrudRepositoryImpl(Class<T> entityClass) {
-        this.type = entityClass;
+    @Override
+    public List<Pelicula> listar(){
+        em = JpaUtil.getEntityManager();
+        List<Pelicula> peliculas = em.createQuery("select e from Pelicula e",
+                Pelicula.class).getResultList();
+        em.close();
+        return peliculas;
+
     }
 
     @Override
-    public List<T> listar() {
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<T> criteriaQuery = cb.createQuery(type);
-        Root<T> root = criteriaQuery.from(type);
-        criteriaQuery.select(root);
-        TypedQuery<T> query = em.createQuery(criteriaQuery);
-        return query.getResultList();
+    public Pelicula porId(Long id ){
+        em = JpaUtil.getEntityManager();
+        peli = em.find(Pelicula.class,id);
+        em.close();
+        return peli;
     }
 
     @Override
-    public T porId(Long id ){
-        em= JpaUtil.getEntityManager();
-        return (T) em.find(type, id);
-    }
-
-    @Override
-    public void editar(T t) throws Exception {
+    public void editar(Pelicula pelicula) throws Exception {
         try{
             em = JpaUtil.getEntityManager();
             em.getTransaction().begin();
-            em.merge(t);
+            em.merge(pelicula);
             em.getTransaction().commit();
             em.close();
         } catch (Exception e){
@@ -55,12 +46,12 @@ public class CrudRepositoryImpl<T, ID extends Serializable> implements CrudRepos
     }
 
     @Override
-    public void crear(T t)throws Exception{
+    public void crear(Pelicula pelicula)throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            //T actor = em.find(T.class, id);
+            //Pelicula pelicula = em.find(Pelicula.class, id);
             em.getTransaction().begin();
-            em.persist(t);
+            em.persist(pelicula);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
@@ -76,9 +67,9 @@ public class CrudRepositoryImpl<T, ID extends Serializable> implements CrudRepos
     public void eliminar(long id) throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            T t = em.find(type, id);
+            Pelicula pelicula = em.find(Pelicula.class, id);
             em.getTransaction().begin();
-            em.remove(t);
+            em.remove(pelicula);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
@@ -89,7 +80,7 @@ public class CrudRepositoryImpl<T, ID extends Serializable> implements CrudRepos
     }
 
     @Override
-    public void eliminar(T t) throws Exception {
+    public void eliminar(Pelicula pelicula) throws Exception {
 
     }
 

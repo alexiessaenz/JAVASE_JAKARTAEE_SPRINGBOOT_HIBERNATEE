@@ -1,11 +1,12 @@
 package services;
 
+import repositories.ActorRepository;
 import repositories.CrudRepositoryImpl;
 
 import java.util.List;
 
 public class ServiceImpl<T> implements IService<T> {
-    CrudRepositoryImpl Repository = new CrudRepositoryImpl();
+ActorRepository Repository = new ActorRepository();
     private T t;
 
     public ServiceImpl() {

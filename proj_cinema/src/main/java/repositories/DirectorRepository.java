@@ -79,4 +79,9 @@ public class DirectorRepository implements CrudRepository<Director>{
         }
     }
 
+    @Override
+    public void eliminar(Director director) throws Exception {
+
+    }
+
 }
