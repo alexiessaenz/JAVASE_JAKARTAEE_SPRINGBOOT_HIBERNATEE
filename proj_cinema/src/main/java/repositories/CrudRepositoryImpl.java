@@ -1,39 +1,48 @@
 package repositories;
 
-import entities.Pelicula;
+
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import utils.JpaUtil;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 
-public class PeliculaRepository implements CrudRepository<Pelicula>{
+public class CrudRepositoryImpl<T> implements CrudRepository<T>{
     private EntityManager em;
-    private Pelicula peli;
-
-    @Override
-    public List<Pelicula> listar(){
-        em = JpaUtil.getEntityManager();
-        List<Pelicula> peliculas = em.createQuery("select e from Pelicula e",
-                Pelicula.class).getResultList();
-        em.close();
-        return peliculas;
-
+    private Class<T> type;
+    public CrudRepositoryImpl() {
+        Type t = getClass().getGenericSuperclass();
+        ParameterizedType pt = (ParameterizedType) t;
+        type = (Class) pt.getActualTypeArguments()[0];
     }
 
     @Override
-    public Pelicula porId(Long id ){
-        em = JpaUtil.getEntityManager();
-        peli = em.find(Pelicula.class,id);
-        em.close();
-        return peli;
+    public List<T> listar() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<T> criteriaQuery = cb.createQuery(type);
+        Root<T> root = criteriaQuery.from(type);
+        criteriaQuery.select(root);
+        TypedQuery<T> query = em.createQuery(criteriaQuery);
+        return query.getResultList();
     }
 
     @Override
-    public void editar(Pelicula pelicula) throws Exception {
+    public T porId(Long id ){
+        em= JpaUtil.getEntityManager();
+        return (T) em.find(type, id);
+    }
+
+    @Override
+    public void editar(T t) throws Exception {
         try{
             em = JpaUtil.getEntityManager();
             em.getTransaction().begin();
-            em.merge(pelicula);
+            em.merge(t);
             em.getTransaction().commit();
             em.close();
         } catch (Exception e){
@@ -46,12 +55,12 @@ public class PeliculaRepository implements CrudRepository<Pelicula>{
     }
 
     @Override
-    public void crear(Pelicula pelicula)throws Exception{
+    public void crear(T t)throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            //Pelicula pelicula = em.find(Pelicula.class, id);
+            //T actor = em.find(T.class, id);
             em.getTransaction().begin();
-            em.persist(pelicula);
+            em.persist(t);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
@@ -67,9 +76,9 @@ public class PeliculaRepository implements CrudRepository<Pelicula>{
     public void eliminar(long id) throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            Pelicula pelicula = em.find(Pelicula.class, id);
+            T t = em.find(type, id);
             em.getTransaction().begin();
-            em.remove(pelicula);
+            em.remove(t);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();

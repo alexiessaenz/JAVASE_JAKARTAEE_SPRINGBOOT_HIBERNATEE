@@ -1,6 +1,5 @@
 package repositories;
 
-import org.jpahibernateexam.entities.Empleado;
 
 import java.util.List;
 

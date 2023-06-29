@@ -1,39 +1,39 @@
 package repositories;
 
-import entities.Pelicula;
+import entities.Director;
 import jakarta.persistence.EntityManager;
 import utils.JpaUtil;
 
 import java.util.List;
 
-public class PeliculaRepository implements CrudRepository<Pelicula>{
+public class DirectorRepository implements CrudRepository<Director>{
     private EntityManager em;
-    private Pelicula peli;
+    private Director peli;
 
     @Override
-    public List<Pelicula> listar(){
+    public List<Director> listar(){
         em = JpaUtil.getEntityManager();
-        List<Pelicula> peliculas = em.createQuery("select e from Pelicula e",
-                Pelicula.class).getResultList();
+        List<Director> directors = em.createQuery("select e from Director e",
+                Director.class).getResultList();
         em.close();
-        return peliculas;
+        return directors;
 
     }
 
     @Override
-    public Pelicula porId(Long id ){
+    public Director porId(Long id ){
         em = JpaUtil.getEntityManager();
-        peli = em.find(Pelicula.class,id);
+        peli = em.find(Director.class,id);
         em.close();
         return peli;
     }
 
     @Override
-    public void editar(Pelicula pelicula) throws Exception {
+    public void editar(Director director) throws Exception {
         try{
             em = JpaUtil.getEntityManager();
             em.getTransaction().begin();
-            em.merge(pelicula);
+            em.merge(director);
             em.getTransaction().commit();
             em.close();
         } catch (Exception e){
@@ -46,12 +46,12 @@ public class PeliculaRepository implements CrudRepository<Pelicula>{
     }
 
     @Override
-    public void crear(Pelicula pelicula)throws Exception{
+    public void crear(Director director)throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            //Pelicula pelicula = em.find(Pelicula.class, id);
+            //Director director = em.find(Director.class, id);
             em.getTransaction().begin();
-            em.persist(pelicula);
+            em.persist(director);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
@@ -67,9 +67,9 @@ public class PeliculaRepository implements CrudRepository<Pelicula>{
     public void eliminar(long id) throws Exception{
         try {
             em = JpaUtil.getEntityManager();
-            Pelicula pelicula = em.find(Pelicula.class, id);
+            Director director = em.find(Director.class, id);
             em.getTransaction().begin();
-            em.remove(pelicula);
+            em.remove(director);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
