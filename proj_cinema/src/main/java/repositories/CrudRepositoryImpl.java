@@ -8,17 +8,17 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import utils.JpaUtil;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class CrudRepositoryImpl<T> implements CrudRepository<T>{
+public class CrudRepositoryImpl<T, ID extends Serializable> implements CrudRepository<T, ID> {
     private EntityManager em;
     private Class<T> type;
-    public CrudRepositoryImpl() {
-        Type t = getClass().getGenericSuperclass();
-        ParameterizedType pt = (ParameterizedType) t;
-        type = (Class) pt.getActualTypeArguments()[0];
+
+    public CrudRepositoryImpl(Class<T> entityClass) {
+        this.type = entityClass;
     }
 
     @Override
@@ -86,6 +86,11 @@ public class CrudRepositoryImpl<T> implements CrudRepository<T>{
         } finally {
             em.close();
         }
+    }
+
+    @Override
+    public void eliminar(T t) throws Exception {
+
     }
 
 }

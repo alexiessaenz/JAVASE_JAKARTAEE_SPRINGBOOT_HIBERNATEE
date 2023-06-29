@@ -1,8 +1,13 @@
 package entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Data
 @Table(name = "premio")
 public class Premio {
     @Id
@@ -15,30 +20,7 @@ public class Premio {
     @JoinColumn(name="Anyo")
     Pelicula pelicula = new Pelicula();
 
-    public Premio() {
-    }
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "pelicula")
+    private List<Pelicula> peliculas = new ArrayList<>();
 
-    public Long getCodPremio() {
-        return codPremio;
-    }
-
-    public void setCodPremio(Long codPremio) {
-        this.codPremio = codPremio;
-    }
-
-    public String getPremio() {
-        return premio;
-    }
-
-    public void setPremio(String premio) {
-        this.premio = premio;
-    }
-
-    @Override
-    public String toString() {
-        return "Premio{" +
-                "codPremio=" + codPremio +
-                ", premio='" + premio + '\'' +
-                '}';
-    }
 }
