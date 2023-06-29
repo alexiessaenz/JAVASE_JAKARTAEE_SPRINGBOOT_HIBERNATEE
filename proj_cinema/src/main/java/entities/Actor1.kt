@@ -1,5 +1,7 @@
 package entities
 
+import jakarta.persistence.EntityManager
+import utils.JpaUtil
 import java.time.LocalDateTime
 
 class Actor1 {

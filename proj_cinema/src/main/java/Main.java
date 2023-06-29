@@ -1,8 +1,6 @@
-import entities.Actor;
-import entities.Actor1;
 import entities.GanaPremio;
 import jakarta.persistence.EntityManager;
-import util.JpaUtil;
+import utils.JpaUtil;
 
 public class Main {
     public static void main(String[] args) {

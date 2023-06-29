@@ -8,10 +8,10 @@ import java.io.Serializable;
 @Embeddable
 public class GanaPremioKey implements Serializable {
     @Column(name = "CodPelicula")
-    Long codPelicula;
+    long codPelicula;
 
     @Column(name = "CodPremio")
-    Long codPremio;
+    long codPremio;
 
     public GanaPremioKey() {
     }
