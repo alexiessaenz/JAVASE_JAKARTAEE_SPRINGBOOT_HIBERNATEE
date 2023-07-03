@@ -8,12 +8,12 @@ public class GanaPremio {
     @EmbeddedId
     GanaPremioKey id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("codPelicula")
     @JoinColumn(name = "CodPelicula")
     Pelicula pelicula;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("codPremio")
     @JoinColumn(name = "CodPremio")
     Premio premio;

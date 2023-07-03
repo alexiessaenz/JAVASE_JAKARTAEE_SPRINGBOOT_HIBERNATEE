@@ -3,6 +3,8 @@ package entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -36,7 +38,8 @@ public class Pelicula {
     @Column(name = "Distribuidora")
     String distribuidora;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.MERGE, orphanRemoval = true)
     @JoinTable(name="participa"
             ,joinColumns = @JoinColumn(name = "CodPelicula")
             ,inverseJoinColumns = @JoinColumn(name = "CodActor")
@@ -63,8 +66,8 @@ public class Pelicula {
     @JoinColumn(name="idGenero")
     Genero genero = new Genero();
 
-
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "pelicula")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany( cascade = CascadeType.MERGE,orphanRemoval = true,mappedBy = "pelicula")
     private List<GanaPremio> ganaPremios = new ArrayList<>();
 
     public void setGanaPremios(List<GanaPremio> ganaPremios) {

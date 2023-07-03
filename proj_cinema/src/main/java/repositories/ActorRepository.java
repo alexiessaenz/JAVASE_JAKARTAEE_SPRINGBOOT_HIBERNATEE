@@ -10,29 +10,34 @@ public class ActorRepository implements CrudRepository<Actor>{
     private EntityManager em;
     private Actor act;
 //    Class<? extends Actor> clazz = act.getClass();
+
+    public ActorRepository(EntityManager em) {
+        this.em = em;
+    }
+
     @Override
     public List<Actor> listar(){
-        em = JpaUtil.getEntityManager();
+//        em = JpaUtil.getEntityManager();
 
         List<Actor> actores = em.createQuery("select e from Actor e",
                 Actor.class).getResultList();
-        em.close();
+//        em.close();
         return actores;
 
     }
 
     @Override
     public Actor porId(Long id ){
-        em = JpaUtil.getEntityManager();
+//        em = JpaUtil.getEntityManager();
         act = em.find(Actor.class,id);
-        em.close();
+//        em.close();
         return act;
     }
 
     @Override
     public void editar(Actor actor) throws Exception {
         try{
-            em = JpaUtil.getEntityManager();
+//            em = JpaUtil.getEntityManager();
             em.getTransaction().begin();
             em.merge(actor);
             em.getTransaction().commit();
@@ -42,25 +47,26 @@ public class ActorRepository implements CrudRepository<Actor>{
             e.printStackTrace();
             throw new Exception(e.getMessage());
         } finally {
-            em.close();
+//            em.close();
         }
     }
 
     @Override
     public void crear(Actor actor)throws Exception{
-            System.out.println(actor);
-            EntityManager em = JpaUtil.getEntityManager();
+
+//            EntityManager em = JpaUtil.getEntityManager();
         try {
             //Actor actor = em.find(Actor.class, id);
             em.getTransaction().begin();
             em.persist(actor);
+            System.out.println(actor);
             em.getTransaction().commit();
         } catch(Exception e){
             em.getTransaction().rollback();
             e.printStackTrace();
 
         } finally {
-            em.close();
+//            em.close();
         }
 
     }
@@ -68,7 +74,7 @@ public class ActorRepository implements CrudRepository<Actor>{
     @Override
     public void eliminar(long id) throws Exception{
         try {
-            em = JpaUtil.getEntityManager();
+//            em = JpaUtil.getEntityManager();
             Actor actor = em.find(Actor.class, id);
             em.getTransaction().begin();
             em.remove(actor);
@@ -77,7 +83,7 @@ public class ActorRepository implements CrudRepository<Actor>{
             em.getTransaction().rollback();
             e.printStackTrace();
         } finally {
-            em.close();
+//            em.close();
         }
     }
 

@@ -10,6 +10,10 @@ import java.util.List;
 public class PeliculaRepository implements CrudRepository<Pelicula>{
     private EntityManager em;
 
+    public PeliculaRepository(EntityManager em) {
+        this.em = em;
+    }
+
     @Override
     @Transactional
     public List<Pelicula> listar(){

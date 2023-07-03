@@ -15,14 +15,14 @@ import com.alexiessaenz.demo.models.Usuario;
 @Controller
 @RequestMapping("/app")
 public class IndexController {
-	@Value("Hola Spring Framework con Model desde properties")
+	@Value("${texto.indexcontroller.index.titulo}")
 	private String textoIndex;
 	
-	@Value("Perfil del usuario: ")
+	@Value("${texto.indexcontroller.perfil.titulo}")
 	private String textoPerfil;
 	
 	
-	@Value("Listado de usuarios desde texto.properties")
+	@Value("${texto.indexcontroller.listar.titulo}")
 	private String textoListar;
 	
 	

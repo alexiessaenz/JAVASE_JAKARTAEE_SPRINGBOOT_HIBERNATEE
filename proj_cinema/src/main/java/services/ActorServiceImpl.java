@@ -1,19 +1,25 @@
 package services;
 
 import entities.Actor;
+import jakarta.persistence.EntityManager;
 import repositories.ActorRepository;
+import utils.JpaUtil;
 
 import java.util.List;
 
 public class ActorServiceImpl implements IService<Actor> {
-ActorRepository Repository = new ActorRepository();
+    ActorRepository Repository;
+    EntityManager em ;
     Actor actor = new Actor();
-    public ActorServiceImpl() {
+
+    public ActorServiceImpl(EntityManager em) {
+        this.em = em;
+        this.Repository = new ActorRepository(em);
     }
     @Override
     public List<Actor> listar() throws Exception{
         try {
-            return (List<Actor>) Repository.listar();
+            return Repository.listar();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
