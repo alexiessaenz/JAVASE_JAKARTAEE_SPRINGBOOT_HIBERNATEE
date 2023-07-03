@@ -2,54 +2,45 @@ package services;
 
 import entities.Actor;
 import repositories.ActorRepository;
-//import repositories.CrudRepositoryImpl;
 
 import java.util.List;
 
-public class ServiceImpl<T> implements IService<T> {
+public class ActorServiceImpl implements IService<Actor> {
 ActorRepository Repository = new ActorRepository();
-    private T t;
-
-    public ServiceImpl() {
+    Actor actor = new Actor();
+    public ActorServiceImpl() {
     }
-
-    public ServiceImpl(T t) {
-        this.t = t;
-    }
-
     @Override
-    public List<T> listar() throws Exception{
+    public List<Actor> listar() throws Exception{
         try {
-            return (List<T>) Repository.listar();
+            return (List<Actor>) Repository.listar();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
-
     @Override
-    public T porId(Long id) throws Exception{
+    public Actor porId(Long id) throws Exception{
         try {
-            return (T) Repository.porId(id);
+            return Repository.porId(id);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
-
     @Override
-    public void crear(T t) throws Exception{
-        Repository.crear((Actor) t);
+    public void crear(Actor actor) throws Exception{
+        Repository.crear(actor);
     }
-
     @Override
     public void eliminar(long id) throws Exception{
-            t = (T) Repository.porId(id);
-            if (t == null) throw new Exception("No existe el empleado con el id " + id);
+            actor =  Repository.porId(id);
+            if (actor == null) throw new Exception("No existe el actor con el id " + id);
             Repository.eliminar(id);
     }
-
     @Override
-    public void editar(T t) throws Exception{
-        Repository.crear((Actor) t);
-            Repository.editar((Actor) ServiceImplt);
+    public void editar(Actor actor) throws Exception{
+        actor =  Repository.porId(actor.getCodActor());
+        if (actor == null)
+            Repository.crear(actor);
+        Repository.editar(actor);
     }
 }

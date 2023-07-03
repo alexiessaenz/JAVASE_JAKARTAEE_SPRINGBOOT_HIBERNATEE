@@ -3,6 +3,7 @@ package org.jpa_hibernate_asociaciones.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.entities.Curso;
 
 import java.util.ArrayList;
 import java.util.List;

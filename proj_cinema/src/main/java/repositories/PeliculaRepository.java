@@ -2,15 +2,16 @@ package repositories;
 
 import entities.Pelicula;
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import utils.JpaUtil;
 
 import java.util.List;
 
 public class PeliculaRepository implements CrudRepository<Pelicula>{
     private EntityManager em;
-    private Pelicula peli;
 
     @Override
+    @Transactional
     public List<Pelicula> listar(){
         em = JpaUtil.getEntityManager();
         List<Pelicula> peliculas = em.createQuery("select e from Pelicula e",
@@ -21,9 +22,10 @@ public class PeliculaRepository implements CrudRepository<Pelicula>{
     }
 
     @Override
+    @Transactional
     public Pelicula porId(Long id ){
         em = JpaUtil.getEntityManager();
-        peli = em.find(Pelicula.class,id);
+        Pelicula peli = em.find(Pelicula.class, id);
         em.close();
         return peli;
     }

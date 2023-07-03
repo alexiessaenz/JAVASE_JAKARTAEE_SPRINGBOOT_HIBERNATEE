@@ -1,11 +1,14 @@
 package entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+@Data
 @Entity
 @Table(name = "actor")
 public class Actor {
@@ -26,75 +29,8 @@ public class Actor {
     @Column(name = "LMuerte")
     String lMuerte;
 
+//    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "a")
+//    private List<GanaPremio> ganaPremios = new ArrayList<>();
     public Actor() {
-    }
-
-    public Long getCodActor() {
-        return codActor;
-    }
-
-    public void setCodActor(Long codActor) {
-        this.codActor = codActor;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public LocalDateTime getfNAcimiento() {
-        return fNAcimiento;
-    }
-
-    public void setfNAcimiento(LocalDateTime fNAcimiento) {
-        this.fNAcimiento = fNAcimiento;
-    }
-
-    public String getlNacimiento() {
-        return lNacimiento;
-    }
-
-    public void setlNacimiento(String lNacimiento) {
-        this.lNacimiento = lNacimiento;
-    }
-
-    public String getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
-
-    public LocalDateTime getfMuerte() {
-        return fMuerte;
-    }
-
-    public void setfMuerte(LocalDateTime fMuerte) {
-        this.fMuerte = fMuerte;
-    }
-
-    public String getlMuerte() {
-        return lMuerte;
-    }
-
-    public void setlMuerte(String lMuerte) {
-        this.lMuerte = lMuerte;
-    }
-
-    @Override
-    public String toString() {
-        return "Actor{" +
-                "codActor=" + codActor +
-                ", nombre='" + nombre + '\'' +
-                ", fNAcimiento=" + fNAcimiento +
-                ", lNacimiento='" + lNacimiento + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", fMuerte=" + fMuerte +
-                ", lMuerte='" + lMuerte + '\'' +
-                '}';
     }
 }

@@ -1,25 +1,26 @@
 package services;
 
-import entities.Actor;
-import repositories.ActorRepository;
+import entities.Pelicula;
+import repositories.PeliculaRepository;
+import repositories.PeliculaRepository;
 
 import java.util.List;
 
-public class ActorServiceImpl implements IService<Actor> {
-ActorRepository Repository = new ActorRepository();
-    Actor actor = new Actor();
-    public ActorServiceImpl() {
+public class PeliculaServiceImpl implements IService<Pelicula> {
+PeliculaRepository Repository = new PeliculaRepository();
+    Pelicula pelicula = new Pelicula();
+    public PeliculaServiceImpl() {
     }
     @Override
-    public List<Actor> listar() throws Exception{
+    public List<Pelicula> listar() throws Exception{
         try {
-            return (List<Actor>) Repository.listar();
+            return Repository.listar();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
     @Override
-    public Actor porId(Long id) throws Exception{
+    public Pelicula porId(Long id) throws Exception{
         try {
             return Repository.porId(id);
         } catch (Exception e) {
@@ -27,20 +28,20 @@ ActorRepository Repository = new ActorRepository();
         }
     }
     @Override
-    public void crear(Actor actor) throws Exception{
-        Repository.crear(actor);
+    public void crear(Pelicula pelicula) throws Exception{
+        Repository.crear(pelicula);
     }
     @Override
     public void eliminar(long id) throws Exception{
-            actor =  Repository.porId(id);
-            if (actor == null) throw new Exception("No existe el actor con el id " + id);
+            pelicula =  Repository.porId(id);
+            if (pelicula == null) throw new Exception("No existe el pelicula con el id " + id);
             Repository.eliminar(id);
     }
     @Override
-    public void editar(Actor actor) throws Exception{
-        actor =  Repository.porId(actor.getCodActor());
-        if (actor == null)
-            Repository.crear(actor);
-        Repository.editar(actor);
+    public void editar(Pelicula pelicula) throws Exception{
+        pelicula =  Repository.porId(pelicula.getCodPelicula());
+        if (pelicula == null)
+            Repository.crear(pelicula);
+        Repository.editar(pelicula);
     }
 }

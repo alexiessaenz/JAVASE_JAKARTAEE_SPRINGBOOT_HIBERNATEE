@@ -9,13 +9,13 @@ import java.util.List;
 public class ActorRepository implements CrudRepository<Actor>{
     private EntityManager em;
     private Actor act;
-    Class<? extends Actor> clazz = act.getClass();
+//    Class<? extends Actor> clazz = act.getClass();
     @Override
     public List<Actor> listar(){
         em = JpaUtil.getEntityManager();
 
         List<Actor> actores = em.createQuery("select e from Actor e",
-                ).getResultList();
+                Actor.class).getResultList();
         em.close();
         return actores;
 
@@ -24,7 +24,7 @@ public class ActorRepository implements CrudRepository<Actor>{
     @Override
     public Actor porId(Long id ){
         em = JpaUtil.getEntityManager();
-        act = em.find(clazz,id);
+        act = em.find(Actor.class,id);
         em.close();
         return act;
     }
@@ -48,8 +48,9 @@ public class ActorRepository implements CrudRepository<Actor>{
 
     @Override
     public void crear(Actor actor)throws Exception{
+            System.out.println(actor);
+            EntityManager em = JpaUtil.getEntityManager();
         try {
-            em = JpaUtil.getEntityManager();
             //Actor actor = em.find(Actor.class, id);
             em.getTransaction().begin();
             em.persist(actor);

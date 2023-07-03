@@ -16,11 +16,14 @@ public class Premio {
     Long codPremio;
     String premio;
 
-    @ManyToOne
-    @JoinColumn(name="Anyo")
-    Pelicula pelicula = new Pelicula();
+//    @ManyToOne
+//    @JoinColumn(name="Anyo")
+//    Pelicula pelicula = new Pelicula();
+//
+//    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "pelicula")
+//    private List<Pelicula> peliculas = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "pelicula")
-    private List<Pelicula> peliculas = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "premio")
+    private List<GanaPremio> ganaPremios = new ArrayList<>();
 
 }
