@@ -1,10 +1,12 @@
 package entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "director")
 public class Director {
@@ -22,10 +24,13 @@ public class Director {
     String nacionalidad;
     @Column(name = "FMuerte")
     LocalDateTime fMuerte;
+    @Column(name = "LMuerte")
+    String lMuerte;
 
 
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "pelicula")
-//    private List<Pelicula> pelicula;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "director")
+    private List<Pelicula> pelicula;
 
 
     public Director() {

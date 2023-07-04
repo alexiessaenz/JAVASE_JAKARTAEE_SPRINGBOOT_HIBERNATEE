@@ -39,13 +39,11 @@ public class Pelicula {
     String distribuidora;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name="participa"
             ,joinColumns = @JoinColumn(name = "CodPelicula")
             ,inverseJoinColumns = @JoinColumn(name = "CodActor")
-            ,uniqueConstraints = @UniqueConstraint(
-            columnNames = {"CodActor"}
-    ))
+    )
     private List<Actor> actores = new ArrayList<>();
 
 //    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -62,13 +60,16 @@ public class Pelicula {
     @JoinColumn(name="CodDirector")
     Director director = new Director();
 
-    @ManyToOne/*(fetch = FetchType.LAZY)*/
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="idGenero")
     Genero genero = new Genero();
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany( cascade = CascadeType.MERGE,orphanRemoval = true,mappedBy = "pelicula")
+    @OneToMany( cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "pelicula")
     private List<GanaPremio> ganaPremios = new ArrayList<>();
+
+    public Pelicula() {
+    }
 
     public void setGanaPremios(List<GanaPremio> ganaPremios) {
         this.ganaPremios = ganaPremios;

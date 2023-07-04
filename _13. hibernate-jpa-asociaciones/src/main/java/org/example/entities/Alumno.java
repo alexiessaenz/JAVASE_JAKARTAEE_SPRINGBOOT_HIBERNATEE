@@ -1,4 +1,4 @@
-package org.jpa_hibernate_asociaciones.entity;
+package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

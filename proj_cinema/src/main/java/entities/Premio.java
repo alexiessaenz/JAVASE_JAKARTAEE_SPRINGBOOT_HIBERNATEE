@@ -26,4 +26,6 @@ public class Premio {
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy = "premio")
     private List<GanaPremio> ganaPremios = new ArrayList<>();
 
+    public Premio() {
+    }
 }
