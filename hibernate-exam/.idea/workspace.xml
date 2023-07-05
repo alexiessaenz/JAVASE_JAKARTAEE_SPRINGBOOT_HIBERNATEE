@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34cf827d-fe21-4e77-8e09-8dd2718573cb" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingMarkupGrave">
+    <markupCoffin contentHash="1104527272" url="file://$PROJECT_DIR$/src/main/java/org/jpahibernateexam/repositories/EmpleadoRepository.java">
+      <highlighter start="214" end="222" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="311" end="314" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="357" end="363" layer="3000" target="1" gutterIconUrl="jar:file:/C:/Users/Database_fundamental/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8296.17/lib/app-client.jar!/gutter/implementingMethod.svg" />
+      <highlighter start="431" end="440" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="623" end="628" layer="3000" target="1" gutterIconUrl="jar:file:/C:/Users/Database_fundamental/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8296.17/lib/app-client.jar!/gutter/implementingMethod.svg" />
+      <highlighter start="800" end="806" layer="3000" target="1" gutterIconUrl="jar:file:/C:/Users/Database_fundamental/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8296.17/lib/app-client.jar!/gutter/implementingMethod.svg" />
+      <highlighter start="1131" end="1146" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="1290" end="1295" layer="3000" target="1" gutterIconUrl="jar:file:/C:/Users/Database_fundamental/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8296.17/lib/app-client.jar!/gutter/implementingMethod.svg" />
+      <highlighter start="1321" end="1330" layer="4000" target="0">
+        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="1405" end="1413" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="1414" end="1422" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="1433" end="1441" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="1659" end="1674" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="1771" end="1779" layer="3000" target="1" gutterIconUrl="jar:file:/C:/Users/Database_fundamental/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8296.17/lib/app-client.jar!/gutter/implementingMethod.svg" />
+      <highlighter start="1796" end="1805" layer="4000" target="0">
+        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="2131" end="2146" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+    </markupCoffin>
+  </component>
+  <component name="ProjectId" id="2RILpW69zYr6Eyy7OHJFL1w7iRP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Database_fundamental/IdeaProjects/Nueva carpeta/CRUD/proj_cinema",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/Database_fundamental/IdeaProjects/Nueva carpeta/hibernate-exam/src/main/java/org/jpa-hibernate-exam/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.jpahibernateexam.entities" />
+      <recent name="org.jpahibernateexam" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="HibernateListar2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.jpahibernateexam.HibernateListar2" />
+      <module name="hibernate-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jpahibernateexam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.jpahibernateexam.Main" />
+      <module name="hibernate-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jpahibernateexam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HibernateListar2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34cf827d-fe21-4e77-8e09-8dd2718573cb" name="Changes" comment="" />
+      <created>1686932833583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686932833583</updated>
+      <workItem from="1687276077498" duration="1608000" />
+      <workItem from="1687791362698" duration="228000" />
+      <workItem from="1687968589774" duration="2370000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
