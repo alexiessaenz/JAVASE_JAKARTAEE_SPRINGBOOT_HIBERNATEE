@@ -11,5 +11,5 @@ public class Cliente {
     @Value("Andr&eacute;s")
     private String nombre;
     @Value("Guzm&aacute;n")
-    private String nombre;
+    private String apellido;
 }

@@ -1,4 +1,4 @@
-package com.example.spinjection.di.app.controllers;
+package com.alexiessaenz.demo.controllers;
 
 
 import com.alexiessaenz.demo.models.domain.Factura;
@@ -19,6 +19,6 @@ public class FacturaController {
     public String ver(Model model){
         model.addAttribute("factura",factura);
         model.addAttribute("titulo","Ejemplo Factura con inyeccion de dependencia");
-        return "factura/ver"
+        return "factura/ver";
     }
 }
