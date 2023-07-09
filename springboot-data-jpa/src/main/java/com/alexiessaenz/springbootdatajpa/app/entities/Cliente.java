@@ -18,7 +18,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private static  final long serialVersionUID = 1L;
+    //private static  final long serialVersionUID = 1L;
     @NotEmpty
     private String nombre;
     @NotEmpty
