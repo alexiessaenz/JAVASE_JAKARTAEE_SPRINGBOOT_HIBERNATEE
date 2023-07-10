@@ -1,0 +1,19 @@
+{
+  "prperties": [
+    {
+      "name": "cliente.nombre",
+      "type": "java.lang.String",
+      "description": "Adescription for 'cliente.nombre'"
+    },
+    {
+      "name": "cliente.nombre",
+      "type": "java.lang.String",
+      "description": "Adescription for 'cliente.nombre'"
+    },
+    {
+      "name": "cliente.nombre",
+      "type": "java.lang.String",
+      "description": "Adescription for 'cliente.nombre'"
+    }
+  ]
+}
