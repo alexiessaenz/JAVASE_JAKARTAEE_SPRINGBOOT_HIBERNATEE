@@ -8,17 +8,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "clientes")
-public class Cliente {
+public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //private static  final long serialVersionUID = 1L;
+    private static  final long serialVersionUID = 1L;
     @NotEmpty
     private String nombre;
     @NotEmpty
@@ -31,4 +32,5 @@ public class Cliente {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "created_at")
     private Date createAt;
+
 }
