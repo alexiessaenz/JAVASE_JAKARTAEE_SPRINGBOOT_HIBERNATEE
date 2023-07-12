@@ -5,6 +5,7 @@ import com.alexiessaenz.springbootdatajpa.app.models.entity.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +25,9 @@ public class ClienteServiceImpl implements IClienteService{
     @Override
     @Transactional
     public void save(Cliente cliente) {
-        clienteDao.findAll(cliente);
+
+        Sort sortOrder = Sort.by("nombre");
+        clienteDao.findAll(sortOrder);
     }
 
     @Override
