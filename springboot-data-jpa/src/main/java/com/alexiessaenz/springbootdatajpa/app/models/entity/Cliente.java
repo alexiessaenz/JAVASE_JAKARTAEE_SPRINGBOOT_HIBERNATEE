@@ -1,4 +1,4 @@
-package com.alexiessaenz.springbootdatajpa.app.entities;
+package com.alexiessaenz.springbootdatajpa.app.models.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -8,17 +8,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "clientes")
-public class Cliente {
+public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //private static  final long serialVersionUID = 1L;
+    private static  final long serialVersionUID = 1L;
     @NotEmpty
     private String nombre;
     @NotEmpty
@@ -32,5 +33,4 @@ public class Cliente {
     @Column(name = "created_at")
     private Date createAt;
 
-    String foto;
 }
