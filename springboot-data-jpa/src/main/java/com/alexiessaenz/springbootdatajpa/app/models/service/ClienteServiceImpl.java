@@ -16,11 +16,11 @@ public class ClienteServiceImpl implements IClienteService{
     @Autowired
     private IClienteDao clienteDao;
 
-//    @Override
-//    @Transactional(readOnly = true)
-//    public List<Cliente> findAll(){
-//        return clienteDao.findAll();
-//    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> findAll(){
+        return clienteDao.findAll();
+    }
 
     @Override
     @Transactional

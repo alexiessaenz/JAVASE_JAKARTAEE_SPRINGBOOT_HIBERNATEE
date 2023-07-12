@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface IClienteService {
-//    public List<Cliente> findAll();
+    public List<Cliente> findAll();
     Page<Cliente> findAll(Pageable pageable);
     @Transactional()
     void save(Cliente cliente);
