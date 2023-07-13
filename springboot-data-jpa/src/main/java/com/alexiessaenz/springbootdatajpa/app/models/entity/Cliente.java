@@ -32,5 +32,6 @@ public class Cliente implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "created_at")
     private Date createAt;
-
+    @NotEmpty
+    private String foto;
 }

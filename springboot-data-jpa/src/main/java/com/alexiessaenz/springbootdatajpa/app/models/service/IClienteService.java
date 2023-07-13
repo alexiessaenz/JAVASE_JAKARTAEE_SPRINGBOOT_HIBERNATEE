@@ -13,7 +13,7 @@ public interface IClienteService {
     @Transactional()
     void save(Cliente cliente);
     @Transactional()
-    Cliente findOneById(Long id);
+    Cliente findOne(Long id);
     @Transactional()
-    void remove(Long id);
+    void delete(Long id);
 }

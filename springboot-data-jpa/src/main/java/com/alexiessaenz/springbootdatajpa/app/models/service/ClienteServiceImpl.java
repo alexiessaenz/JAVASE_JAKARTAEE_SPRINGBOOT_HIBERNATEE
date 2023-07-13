@@ -32,13 +32,13 @@ public class ClienteServiceImpl implements IClienteService{
 
     @Override
     @Transactional(readOnly = true)
-    public Cliente findOneById(Long id) {
+    public Cliente findOne(Long id) {
         return clienteDao.findById(id).orElse(null);
     }
 
     @Override
     @Transactional(readOnly = false)
-    public void remove(Long id) {
+    public void delete(Long id) {
         clienteDao.deleteById(id);
     }
 
