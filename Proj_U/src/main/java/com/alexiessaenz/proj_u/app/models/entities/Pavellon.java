@@ -27,7 +27,7 @@ public class Pavellon {
     @Column(name = "fecha_modificacion")
     private LocalDate fechaModificacion;
 
-    @OneToMany(mappedBy = "pavellon", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "pavellon",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     Set<Aula> aulas;
 
     @PrePersist
