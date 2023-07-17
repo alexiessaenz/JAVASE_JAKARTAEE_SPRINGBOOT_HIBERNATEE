@@ -33,7 +33,7 @@ public class Aula implements Serializable {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinColumn(name = "pabellon_id", foreignKey = "FK_PAVELLON_ID")
+    @JoinColumn(name = "pavellon_id", foreignKey = @ForeignKey(name = "FK_PAVELLON_ID"))
     private Pavellon pavellon;
 
     @PrePersist

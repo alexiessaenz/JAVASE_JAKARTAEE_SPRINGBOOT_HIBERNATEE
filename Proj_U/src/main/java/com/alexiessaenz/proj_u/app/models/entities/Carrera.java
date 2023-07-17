@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Set;
+
 @Data
 @RequiredArgsConstructor
 @Entity
@@ -23,6 +25,18 @@ public class Carrera implements Serializable {
     private LocalDate fechaAlta;
     @Column(name = "fecha_modificacion")
     private LocalDate fechaModificacion;
+
+    @OneToMany(
+            mappedBy = "carrera",
+            fetch = FetchType.LAZY
+    )
+    private Set<Alumno> alumnos;
+
+    @ManyToMany(
+            mappedBy = "carreras",
+            fetch = FetchType.LAZY
+    )
+    private Set<Profesor> profesores;
 
     @PrePersist
     void prePersist() {
