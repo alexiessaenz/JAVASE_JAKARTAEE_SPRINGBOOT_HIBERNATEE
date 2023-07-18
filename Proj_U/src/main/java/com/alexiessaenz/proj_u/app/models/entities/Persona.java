@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public abstract class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = true, length = 60)
     private String nombre;
     @Column(nullable = true, length = 60)

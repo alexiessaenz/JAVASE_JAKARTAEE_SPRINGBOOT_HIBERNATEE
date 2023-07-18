@@ -15,7 +15,7 @@ import java.util.Set;
 public class Carrera implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nombre;
     @Column(name = "cant_materias")
     private Integer cantMaterias;
