@@ -1,9 +1,12 @@
 package com.alexiessaenz.proj_u.app.services.contracts;
 
-public interface IAlumnoDAO extends IPersonaDAO<P> {
+import com.alexiessaenz.proj_u.app.models.entities.Persona;
 
-    Iterable<Aula> findAulasByPizarron(Pizarron pizarron);
-    Iterable<Aula> findAulasByPavellonNombre(String nombre);
-    Optional<Aula> findAulaByNroAula(Integer nroAula);
+import java.util.Optional;
+
+public interface IAlumnoDAO {
+    Iterable<Persona> buscarAlumnosPorNomnbreCarrera(String nombre);
+
+
 
 }

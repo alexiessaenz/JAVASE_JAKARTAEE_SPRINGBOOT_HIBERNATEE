@@ -38,6 +38,13 @@ public class Carrera implements Serializable {
     )
     private Set<Profesor> profesores;
 
+    public Carrera(Long id, String nombreC, int Cmats, int anios) {
+        this.id = id;
+        this.nombre = nombreC;
+        this.cantMaterias = Cmats;
+        this.cantAnios = anios;
+    }
+
     @PrePersist
     void prePersist() {
         this.fechaAlta = LocalDate.now();

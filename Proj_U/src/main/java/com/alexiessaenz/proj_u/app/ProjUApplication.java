@@ -16,8 +16,7 @@ import java.util.Arrays;
 @SpringBootApplication
 public class ProjUApplication {
 
-    @Autowired
-    private AlumnoDAOImpl alumnoDAOImpl;
+
     public static void main(String[] args) {
        String[] beans = SpringApplication
                 .run(ProjUApplication.class, args)
@@ -56,4 +55,4 @@ public class ProjUApplication {
         };
     }
 
-    }
+}
