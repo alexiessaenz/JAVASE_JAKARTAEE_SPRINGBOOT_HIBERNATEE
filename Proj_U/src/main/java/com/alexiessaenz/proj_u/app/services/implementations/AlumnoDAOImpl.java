@@ -19,8 +19,9 @@ public class AlumnoDAOImpl extends PersonaDAOImpl implements IAlumnoDAO {
         super(repository);
     }
 
+
     @Override
-    public Optional<Persona> buscarAlumnosPorNomnbreCarrera(String nombre) {
-        return Optional.empty();
+    public Iterable<Persona> buscarAlumnosPorNomnbreCarrera(String nombre) {
+        return null;
     }
 }

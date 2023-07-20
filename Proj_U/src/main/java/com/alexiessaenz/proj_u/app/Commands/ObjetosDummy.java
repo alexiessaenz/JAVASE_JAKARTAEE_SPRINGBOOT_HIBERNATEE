@@ -42,7 +42,7 @@ public class ObjetosDummy {
         return new Alumno(null, "Laura", "Videla", "32159753", new Direccion());
     }
 
-    public static Persona getProfesorUno(){
+ /*   public static Persona getProfesorUno(){
         return new Profesor(null, "Horacio", "Laurin", "22695142", new Direccion(), new BigDecimal("25600"));
     }
 
@@ -55,5 +55,5 @@ public class ObjetosDummy {
     }
     public static Persona getEmpleadoDos(){
         return new Empleado(null, "Roberto", "Lugones", "28902674", new Direccion(), new BigDecimal("14250"), TipoEmpleado.MANTENIMIENTO);
-    }
+    }*/
 }

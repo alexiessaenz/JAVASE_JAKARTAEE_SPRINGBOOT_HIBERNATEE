@@ -2,11 +2,13 @@ package com.alexiessaenz.proj_u.app.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Set;
 
 @Data
+@RequiredArgsConstructor
 @Entity
 @Table(name = "pavellones")
 public class Pavellon {

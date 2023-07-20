@@ -61,6 +61,8 @@ public class AlumnoComandos implements CommandLineRunner {
         );
 
 //        iAlumnos.forEach(persona -> System.out.println(persona.toString()));
+        if (iAlumnos != null) {
             iAlumnos.forEach(System.out::println);
+        }
     }
 }
