@@ -19,4 +19,13 @@ public class Direccion implements Serializable {
     private String depto;
     private String piso;
     private String localidad;
+
+    public Direccion(String calle, String numero, String codigoPostal, String depto, String piso, String localidad) {
+        this.calle = calle;
+        this.numero = numero;
+        this.codigoPostal = codigoPostal;
+        this.depto = depto;
+        this.piso = piso;
+        this.localidad = localidad;
+    }
 }

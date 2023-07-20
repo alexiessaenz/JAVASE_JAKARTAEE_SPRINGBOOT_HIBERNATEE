@@ -36,6 +36,9 @@ public class Aula implements Serializable {
     @JoinColumn(name = "pavellon_id", foreignKey = @ForeignKey(name = "FK_PAVELLON_ID"))
     private Pavellon pavellon;
 
+    public Aula(Integer id, Integer nroAula, String medidas, int cantidadPupitres, Pizarron pizarron) {
+    }
+
     @PrePersist
     void prePersist() {
         this.fechaAlta = LocalDate.now();

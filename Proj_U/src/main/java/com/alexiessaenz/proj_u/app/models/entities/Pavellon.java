@@ -30,6 +30,20 @@ public class Pavellon {
     @OneToMany(mappedBy = "pavellon",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     Set<Aula> aulas;
 
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="codigo_postal", column = @Column(name = "codigo_postal")),
+            @AttributeOverride(name="depto", column = @Column(name = "departamento")),
+    })
+    private Direccion direccion;
+
+    public Pavellon(Integer id, double mts2, String nombrePavellon, Direccion direccion) {
+        this.id = id;
+        this.mts2 = mts2;
+        this.nombre = nombrePavellon;
+        this.direccion = direccion;
+    }
+
     @PrePersist
     void prePersist() {
         this.fechaAlta = LocalDate.now();

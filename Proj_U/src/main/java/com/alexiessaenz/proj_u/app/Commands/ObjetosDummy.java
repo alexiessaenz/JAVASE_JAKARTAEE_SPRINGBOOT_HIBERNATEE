@@ -3,6 +3,8 @@ package com.alexiessaenz.proj_u.app.Commands;
 import com.alexiessaenz.proj_u.app.models.entities.*;
 import com.alexiessaenz.proj_u.app.models.entities.enums.Pizarron;
 
+import java.math.BigDecimal;
+
 public class ObjetosDummy {
     public static Aula getAula123(){
         return new Aula(null, 123, "24 x 36", 50, Pizarron.PIZARRA_BLANCA);
