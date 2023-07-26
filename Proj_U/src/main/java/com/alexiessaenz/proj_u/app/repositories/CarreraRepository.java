@@ -11,5 +11,10 @@ public interface CarreraRepository extends CrudRepository<Carrera,Long>{
     Iterable<Carrera> findCarreraByNombreIgnoreCase(String nombre);
     Iterable<Carrera> findCarreraByCantAniosAfter(Integer cantAnios);
 
+    @Query("SELECT c FROM Carrera c join fetch c.profesores p where p.nombre = ?1 and p.apellido = ?2")
+    Iterable<Carrera> buscarCarrerasByProfesorNombreYApellido(String nombre, String apellido);
+
+//    Iterable<Carrera> findByNombreOrderByProfesores_NombreAscProfesores_ApellidoAsc(String nombre);
+
 
 }
