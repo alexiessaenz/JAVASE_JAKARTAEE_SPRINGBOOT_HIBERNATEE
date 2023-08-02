@@ -14,8 +14,9 @@ import org.springframework.context.annotation.Bean;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 @SpringBootApplication
-public class UniversidadBackendApplication {
+public class UniversidadBackendApplication extends SpringBootServletInitializer {
 
 //	@Autowired
 //	private AlumnoDAO service;
